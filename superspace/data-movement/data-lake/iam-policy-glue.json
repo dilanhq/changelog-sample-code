@@ -1,0 +1,36 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "SetupFormTest",
+            "Effect": "Allow",
+            "Action": [
+                "glue:DeleteDatabase"
+            ],
+            "Resource": [
+                "YOUR_CATALOG_REGION:YOUR_ACCOUNT_ID:database/fivetran*",
+                "YOUR_CATALOG_REGION:YOUR_ACCOUNT_ID:catalog",
+                "YOUR_CATALOG_REGION:YOUR_ACCOUNT_ID:table/fivetran*/*",
+                "YOUR_CATALOG_REGION:YOUR_ACCOUNT_ID:userDefinedFunction/fivetran*/*"
+            ]
+        },
+        {
+            "Sid": "AllConnectors",
+            "Effect": "Allow",
+            "Action": [
+                "glue:GetDatabase",
+                "glue:UpdateDatabase",
+                "glue:CreateTable",
+                "glue:GetTables",
+                "glue:CreateDatabase",
+                "glue:UpdateTable",
+                "glue:BatchDeleteTable",
+                "glue:DeleteTable",
+                "glue:GetTable"
+            ],
+            "Resource": [
+                "YOUR_CATALOG_REGION:YOUR_ACCOUNT_ID:*"
+            ]
+        }
+    ]
+}
